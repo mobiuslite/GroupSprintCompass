@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SprintCompassLibrary;
 
 namespace SprintCompass
 {
@@ -20,7 +21,7 @@ namespace SprintCompass
     /// </summary>
     public partial class MainWindow : Window
     {
-        static List<string> teamMembers = new List<string>();
+        static List<TeamMember> teamMembers = new List<TeamMember>();
 
         public MainWindow()
         {
@@ -30,16 +31,25 @@ namespace SprintCompass
             Application.Current.MainWindow.ResizeMode = ResizeMode.NoResize;
         }
 
-        public static List<string> GetTeamList() {
-
-            return teamMembers;
-        
+        internal static void AddTeamMember(string name, string position, string contact)
+        {
+            teamMembers.Add(new TeamMember(name, position, contact));
         }
 
-        public static void AddTeamMember(string name) {
+        public static List<string> GetTeamNames() {
 
-            teamMembers.Add(name);
-        
+            List<string> names = new List<string>();
+            foreach (TeamMember t in teamMembers)
+            {
+                names.Add(t.Name);
+            }
+            return names;
+        }
+
+        public static List<TeamMember> GetTeamList()
+        {
+            return teamMembers;
+
         }
 
         public static void ChangeWindowSize(int w, int h) {

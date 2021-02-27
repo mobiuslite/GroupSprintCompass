@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SprintCompassLibrary;
 
 namespace SprintCompass
 {
@@ -43,7 +44,9 @@ namespace SprintCompass
 
         private void lstTeamMember_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            lblName.Content = lstTeamMember.SelectedItem;
+            lblName.Content = ((TeamMember)lstTeamMember.SelectedItem).Name;
+            lblSpecialty.Content = ((TeamMember)lstTeamMember.SelectedItem).Position;
+            lblContact.Content = ((TeamMember)lstTeamMember.SelectedItem).Contact;
         }
 
         private static void test() {

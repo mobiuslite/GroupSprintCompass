@@ -115,5 +115,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SprintCompassLibrary\SprintCompassLibrary.csproj">
+      <Project>{cc011288-25d7-45c6-91e3-3c1c07bb3703}</Project>
+      <Name>SprintCompassLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
