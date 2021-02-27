@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using SprintCompassLibrary;
 
 namespace SprintCompass
 {
@@ -29,7 +30,7 @@ namespace SprintCompass
         {
             MainWindow.AddTeamMember(txtName.Text, txtPosition.Text, txtContact.Text);
             lblConfirm.Content = $"{txtName.Text} added!";
-
+            Serializer.Serialize(MainWindow.teamMembers, "TeamMembers.json");
 
             txtName.Text = "";
             txtPosition.Text = "";

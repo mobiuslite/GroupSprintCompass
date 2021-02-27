@@ -4,6 +4,7 @@ using System.Text;
 
 namespace SprintCompassLibrary
 {
+    [Serializable]
     public class TeamMember
     {
         private string name;
