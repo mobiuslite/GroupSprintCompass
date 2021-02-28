@@ -27,10 +27,25 @@ namespace SprintCompass
             InitializeComponent();
             lstTeamMember.ItemsSource = MainWindow.GetTeamList();
             Application.Current.MainWindow.Title = "Team Members";
+
+            var test = (TeamMember)lstTeamMember.SelectedItem;
+            if (test == null || lstTeamMember.Items.Count == 0)
+            {
+                lblName.Content = "";
+                lblSpecialty.Content = "";
+                lblContact.Text = "";
+            }
+            else 
+            {
+                lblName.Content = test.Name;
+                lblSpecialty.Content = test.Position;
+                lblContact.Text = test.Contact;
+            }
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
+            Serializer.Serialize(MainWindow.teamMembers, "TeamMembers.json");
             NavigationService.Navigate(new Menu());
             MainWindow.ChangeWindowSize(800, 450);
         }
@@ -38,19 +53,27 @@ namespace SprintCompass
         private void btnAddTeamMember_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new TeamMemberAdd());
-
-            MainWindow.ChangeWindowSize(275, 300);
+            MainWindow.ChangeWindowSize(275, 320);
         }
 
         private void lstTeamMember_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             lblName.Content = ((TeamMember)lstTeamMember.SelectedItem).Name;
             lblSpecialty.Content = ((TeamMember)lstTeamMember.SelectedItem).Position;
-            lblContact.Content = ((TeamMember)lstTeamMember.SelectedItem).Contact;
+            lblContact.Text = ((TeamMember)lstTeamMember.SelectedItem).Contact;
         }
 
-        private static void test() {
-        
+        private void btnRemove_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedItem = (TeamMember)lstTeamMember.SelectedItem;
+
+            if(selectedItem != null)
+                MainWindow.GetTeamList().Remove(selectedItem);
+
+            lstTeamMember.Items.Refresh();
+            lblName.Content = "";
+            lblSpecialty.Content = "";
+            lblContact.Text = "";
         }
 
     }

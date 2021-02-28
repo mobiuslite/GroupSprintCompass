@@ -29,14 +29,11 @@ namespace SprintCompass
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.AddTeamMember(txtName.Text, txtPosition.Text, txtContact.Text);
-            lblConfirm.Content = $"{txtName.Text} added!";
-            Serializer.Serialize(MainWindow.teamMembers, "TeamMembers.json");
+            lblConfirm.Content = $"{txtName.Text} added!";         
 
             txtName.Text = "";
             txtPosition.Text = "";
-            txtContact.Text = "";
-
-            
+            txtContact.Text = "";     
 
         }
 

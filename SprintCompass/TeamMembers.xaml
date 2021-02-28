@@ -5,18 +5,19 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:SprintCompass"
       mc:Ignorable="d"
-      Title="TeamMembers" Height="471.212" Width="498.485"
+      Title="TeamMembers" Height="471.212" Width="474.686"
       WindowWidth="498"
       WindowHeight="500">
 
     <Grid>
         <Label x:Name="lblTitle" Content="Team Members" HorizontalAlignment="Left" Margin="24,28,0,0" VerticalAlignment="Top" Height="42" Width="206" FontSize="18"/>
-        <ListBox x:Name="lstTeamMember" HorizontalAlignment="Left" Height="330" Margin="24,75,0,0" VerticalAlignment="Top" Width="206" IsSynchronizedWithCurrentItem="True" SelectionChanged="lstTeamMember_SelectionChanged"/>
-        <Button x:Name="btnAddTeamMember" Content="Add Team&#xD;&#xA;Member" HorizontalAlignment="Left" Margin="285,333,0,0" VerticalAlignment="Top" Width="128" Height="72" FontSize="18" Click="btnAddTeamMember_Click"/>
-        <Label x:Name="lblName" Content="Label" HorizontalAlignment="Left" Margin="285,92,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Label x:Name="lblSpecialty" Content="Label" HorizontalAlignment="Left" Margin="285,131,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Label x:Name="lblContact" Content="Label" HorizontalAlignment="Left" Margin="285,188,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="24,427,0,0" VerticalAlignment="Top" Width="75" Click="btnBack_Click"/>
+        <ListBox x:Name="lstTeamMember" HorizontalAlignment="Left" Height="273" Margin="24,75,0,0" VerticalAlignment="Top" Width="206" IsSynchronizedWithCurrentItem="True" SelectionChanged="lstTeamMember_SelectionChanged"/>
+        <Button x:Name="btnAddTeamMember" Content="Add Team&#xD;&#xA;Member" HorizontalAlignment="Left" Margin="318,360,0,0" VerticalAlignment="Top" Width="104" Height="61" FontSize="18" Click="btnAddTeamMember_Click"/>
+        <Label x:Name="lblName" Content="" HorizontalAlignment="Left" Margin="285,92,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label x:Name="lblSpecialty" Content="" HorizontalAlignment="Left" Margin="285,131,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="24,401,0,0" VerticalAlignment="Top" Width="75" Click="btnBack_Click"/>
+        <Button x:Name="btnRemove" Content="Remove Selected Team Member" HorizontalAlignment="Left" Margin="24,360,0,0" VerticalAlignment="Top" Width="206" Height="20" Click="btnRemove_Click"/>
+        <TextBlock x:Name="lblContact" HorizontalAlignment="Left" Margin="285,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="129" Width="162" FontSize="14"/>
 
     </Grid>
 </Page>

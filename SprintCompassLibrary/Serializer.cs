@@ -18,8 +18,12 @@ namespace SprintCompassLibrary
 
         public static List<TeamMember> Deserialize(string filename)
         {
-            StreamReader sr = new StreamReader(filename);
-            return JsonConvert.DeserializeObject<List<TeamMember>>(sr.ReadToEnd());
+            if (File.Exists(filename))
+            {
+                StreamReader sr = new StreamReader(filename);
+                return JsonConvert.DeserializeObject<List<TeamMember>>(sr.ReadToEnd());
+            }
+            return null;
         }
     }
 }
