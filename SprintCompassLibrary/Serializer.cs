@@ -11,8 +11,8 @@ namespace SprintCompassLibrary
         public static void Serialize<T>(T serializable, string filename)
         {
             StreamWriter sw = new StreamWriter(filename);
-            string teamJson = JsonConvert.SerializeObject(serializable);
-            sw.WriteLine(teamJson);
+            string json = JsonConvert.SerializeObject(serializable);
+            sw.WriteLine(json);
             sw.Close();
         }
 
