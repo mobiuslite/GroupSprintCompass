@@ -22,6 +22,7 @@ namespace SprintCompass
     public partial class MainWindow : Window
     {
         public static List<TeamMember> teamMembers;
+        public static Project project;
 
         public MainWindow()
         {
