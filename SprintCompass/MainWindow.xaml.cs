@@ -65,5 +65,17 @@ namespace SprintCompass
 
         }
 
+        public static void SetProject(Project p) {
+
+            project = p;
+        
+        }
+
+        public static Project GetProject() {
+
+            return project;
+        
+        }
+
     }
 }
