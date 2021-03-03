@@ -9,39 +9,71 @@ namespace SprintCompassLibrary
     [Serializable]
     public class Project
     {
-        private string name;
-        private string description;
+        private string teamname;
+        private string productname;
+        private DateTime projectStartDate;
+        private int storypointcost;
+        private int estimatedstorypoints;
+        private double appcost;
         private List<Sprint> sprints;
 
-        public string Name
+        public string TeamName
         {
             get
             {
-                return name;
+                return teamname;
             }
         }
 
-        public string Description
+        public string ProjectName
         {
             get
             {
-                return description;
+                return productname;
             }
         }
 
-        public List<Sprint> Sprints
+        public DateTime StartDate
         {
             get
             {
-                return sprints;
+                return projectStartDate;
             }
         }
 
-        public Project(string name, string description)
+        public int StoryPointHours
         {
-            this.name = name;
-            this.description = description;
-            this.sprints = new List<Sprint>();
+            get
+            {
+                return storypointcost;
+            }
+        }
+
+        public int EstimatedStoryPoints
+        {
+            get
+            {
+                return estimatedstorypoints;
+            }
+        }
+
+        public double AppCost
+        {
+            get
+            {
+                return appcost;
+            }
+        }
+
+        public Project(string teamname, string productname, DateTime projectStartDate, int storypointcost, int estimatedstorypoints, double appcost, List<Sprint> sprints)
+        {
+            this.teamname = teamname;
+            this.productname = productname;
+            this.projectStartDate = projectStartDate;
+            this.storypointcost = storypointcost;
+            this.estimatedstorypoints = estimatedstorypoints;
+            this.appcost = appcost;
+            this.sprints = sprints;
         }
 
         public void AddSprint(Sprint sprint)
@@ -51,7 +83,7 @@ namespace SprintCompassLibrary
 
         public override string ToString()
         {
-            return name;
+            return productname + " by " +teamname;
         }
     }
 }
