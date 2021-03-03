@@ -22,6 +22,7 @@ namespace SprintCompass
     public partial class MainWindow : Window
     {
         public static List<TeamMember> teamMembers;
+        public static Project project;
 
         public MainWindow()
         {
@@ -29,7 +30,7 @@ namespace SprintCompass
             frame.Navigate(new Menu());
             ChangeWindowSize(614, 450);
             Application.Current.MainWindow.ResizeMode = ResizeMode.NoResize;
-            teamMembers = Serializer.Deserialize("TeamMembers.json");
+            teamMembers = Serializer.Deserialize<List<TeamMember>>("TeamMembers.json");
 
             if(teamMembers == null)
                 teamMembers = new List<TeamMember>();
