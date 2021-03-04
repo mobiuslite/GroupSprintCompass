@@ -26,7 +26,7 @@ namespace SprintCompass
         {
             InitializeComponent();
             lockInfo = false;
-
+            btnReset.IsEnabled = false;
             Project project = MainWindow.GetProject();
 
             if (project != null) {
@@ -41,6 +41,8 @@ namespace SprintCompass
 
                 calendar.SelectedDate = project.StartDate;
                 calendar.IsEnabled = false;
+
+                btnReset.IsEnabled = true;
 
             }
 
@@ -84,13 +86,14 @@ namespace SprintCompass
                                 Serializer.Serialize(project, App.PROJECT_INFO_FILE);
 
                                 disableInput();
+                                btnReset.IsEnabled = true;
 
                                 MainWindow.SetProject(project);
 
                             }
                             else {
                                 lblFeedback.Foreground = Brushes.Orange;
-                                lblFeedback.Text = $"WARNING: This info cannot be changed later. Be sure that all information is correct";
+                                lblFeedback.Text = $"WARNING: This info cannot be changed without complete deletion. Be sure that all information is correct";
 
                                 btnConfirm.Background = Brushes.Green;
                                 btnConfirm.Content = "Confirm?";
@@ -137,6 +140,32 @@ namespace SprintCompass
 
             btnConfirm.IsEnabled = false;
 
+        }
+
+        public void ResetInput() {
+
+            txtHoursPer.IsReadOnly = false;
+            txtProjName.IsReadOnly = false;
+            txtTeamName.IsReadOnly = false;
+            txtTotalCost.IsReadOnly = false;
+            txtTotalPoints.IsReadOnly = false;
+
+            btnConfirm.IsEnabled = true;
+            btnReset.IsEnabled = false;
+
+            txtHoursPer.Text = "";
+            txtProjName.Text = "";
+            txtTeamName.Text = "";
+            txtTotalCost.Text ="";
+            txtTotalPoints.Text = "";
+
+        }
+
+        private void btnReset_Click(object sender, RoutedEventArgs e)
+        {
+            this.IsEnabled = false;
+            ConfirmReset reset = new ConfirmReset(this);
+            reset.Show();
         }
     }
 }

@@ -41,7 +41,7 @@ namespace SprintCompass
         {
             NavigationService.Navigate(new ProjectInfo());
             //Height="401" Width="395"
-            MainWindow.ChangeWindowSize(435, 441);
+            MainWindow.ChangeWindowSize(400, 481);
         }
     }
 }
