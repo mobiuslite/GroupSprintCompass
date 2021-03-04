@@ -65,12 +65,12 @@ namespace SprintCompassLibrary
             }
         }
 
-        public Project(string teamname, string productname, DateTime projectStartDate, int storypointcost, int estimatedstorypoints, double appcost, List<Sprint> sprints)
+        public Project(string teamname, string projectname, DateTime projectStartDate, int storypointhours, int estimatedstorypoints, double appcost, List<Sprint> sprints)
         {
             this.teamname = teamname;
-            this.projectName = productname;
+            this.projectName = projectname;
             this.projectStartDate = projectStartDate;
-            this.hourPerPoint = storypointcost;
+            this.hourPerPoint = storypointhours;
             this.estimatedStoryPoints = estimatedstorypoints;
             this.appCost = appcost;
             this.sprints = sprints;
