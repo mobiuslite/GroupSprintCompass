@@ -16,7 +16,8 @@ namespace SprintCompassLibrary
                 string json = JsonConvert.SerializeObject(serializable);
                 sw.WriteLine(json);
                 sw.Close();
-            }catch(FileNotFoundException fex)
+            }
+            catch (FileNotFoundException fex)
             {
                 Console.WriteLine($"File not found, message:{fex.Message}");
             }
@@ -46,8 +47,8 @@ namespace SprintCompassLibrary
             {
                 Console.WriteLine($"Unexpected exception: {ex.Message}");
             }
-            return null;
+            return default(T);
         }
-        
+
     }
 }
