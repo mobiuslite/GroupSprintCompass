@@ -10,20 +10,44 @@ namespace SprintCompassLibrary
     {
         public static void Serialize<T>(T serializable, string filename)
         {
-            StreamWriter sw = new StreamWriter(filename);
-            string json = JsonConvert.SerializeObject(serializable);
-            sw.WriteLine(json);
-            sw.Close();
+            try
+            {
+                StreamWriter sw = new StreamWriter(filename);
+                string json = JsonConvert.SerializeObject(serializable);
+                sw.WriteLine(json);
+                sw.Close();
+            }catch(FileNotFoundException fex)
+            {
+                Console.WriteLine($"File not found, message:{fex.Message}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Unexpected exception: {ex.Message}");
+            }
         }
 
         public static T Deserialize<T>(string filename)
         {
-            if (File.Exists(filename))
+            try
             {
-                StreamReader sr = new StreamReader(filename);
-                return JsonConvert.DeserializeObject<T>(sr.ReadToEnd());
+                if (File.Exists(filename))
+                {
+                    StreamReader sr = new StreamReader(filename);
+                    return JsonConvert.DeserializeObject<T>(sr.ReadToEnd());
+                }
+                return default(T);
+
             }
-            return default(T);
+            catch (FileNotFoundException fex)
+            {
+                Console.WriteLine($"File not found, message:{fex.Message}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Unexpected exception: {ex.Message}");
+            }
+            return null;
         }
+        
     }
 }
