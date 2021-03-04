@@ -10,11 +10,11 @@ namespace SprintCompassLibrary
     public class Project
     {
         private string teamname;
-        private string productname;
+        private string projectName;
         private DateTime projectStartDate;
-        private int storypointcost;
-        private int estimatedstorypoints;
-        private double appcost;
+        private int hourPerPoint;
+        private int estimatedStoryPoints;
+        private double appCost;
         private List<Sprint> sprints;
 
         public string TeamName
@@ -29,7 +29,7 @@ namespace SprintCompassLibrary
         {
             get
             {
-                return productname;
+                return projectName;
             }
         }
 
@@ -45,7 +45,7 @@ namespace SprintCompassLibrary
         {
             get
             {
-                return storypointcost;
+                return hourPerPoint;
             }
         }
 
@@ -53,7 +53,7 @@ namespace SprintCompassLibrary
         {
             get
             {
-                return estimatedstorypoints;
+                return estimatedStoryPoints;
             }
         }
 
@@ -61,18 +61,18 @@ namespace SprintCompassLibrary
         {
             get
             {
-                return appcost;
+                return appCost;
             }
         }
 
         public Project(string teamname, string productname, DateTime projectStartDate, int storypointcost, int estimatedstorypoints, double appcost, List<Sprint> sprints)
         {
             this.teamname = teamname;
-            this.productname = productname;
+            this.projectName = productname;
             this.projectStartDate = projectStartDate;
-            this.storypointcost = storypointcost;
-            this.estimatedstorypoints = estimatedstorypoints;
-            this.appcost = appcost;
+            this.hourPerPoint = storypointcost;
+            this.estimatedStoryPoints = estimatedstorypoints;
+            this.appCost = appcost;
             this.sprints = sprints;
         }
 
@@ -83,7 +83,7 @@ namespace SprintCompassLibrary
 
         public override string ToString()
         {
-            return productname + " by " +teamname;
+            return projectName + " by " +teamname;
         }
     }
 }

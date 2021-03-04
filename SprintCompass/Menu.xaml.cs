@@ -36,5 +36,12 @@ namespace SprintCompass
         {
             Environment.Exit(0);
         }
+
+        private void btnProj_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new ProjectInfo());
+            //Height="401" Width="395"
+            MainWindow.ChangeWindowSize(400, 481);
+        }
     }
 }

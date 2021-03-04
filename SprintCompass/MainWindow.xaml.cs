@@ -30,7 +30,8 @@ namespace SprintCompass
             frame.Navigate(new Menu());
             ChangeWindowSize(614, 450);
             Application.Current.MainWindow.ResizeMode = ResizeMode.NoResize;
-            teamMembers = Serializer.Deserialize<List<TeamMember>>("TeamMembers.json");
+            teamMembers = Serializer.Deserialize<List<TeamMember>>(App.TEAM_MEMBERS_FILE);
+            project = Serializer.Deserialize<Project>(App.PROJECT_INFO_FILE);
 
             if(teamMembers == null)
                 teamMembers = new List<TeamMember>();
@@ -63,6 +64,18 @@ namespace SprintCompass
             Application.Current.MainWindow.Height = h;
             Application.Current.MainWindow.Width = w;
 
+        }
+
+        public static void SetProject(Project p) {
+
+            project = p;
+        
+        }
+
+        public static Project GetProject() {
+
+            return project;
+        
         }
 
     }
