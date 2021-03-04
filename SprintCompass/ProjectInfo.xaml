@@ -8,22 +8,22 @@
       Title="ProjectInfo" Height="437" Width="364">
 
     <Grid>
-        <TextBox x:Name="txtProjName" HorizontalAlignment="Left" Height="23" Margin="10,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179"/>
-        <Label x:Name="lblProj" Content="Project Name" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtTeamName" HorizontalAlignment="Left" Height="23" Margin="10,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179"/>
-        <Label x:Name="lblTeam" Content="Team Name" HorizontalAlignment="Left" Margin="10,104,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblDate" Content="Project Start Date" HorizontalAlignment="Left" Margin="10,158,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtProjName" HorizontalAlignment="Left" Height="23" Margin="10,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179"/>
+        <Label x:Name="lblProj" Content="Project Name" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtTeamName" HorizontalAlignment="Left" Height="23" Margin="10,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179"/>
+        <Label x:Name="lblTeam" Content="Team Name" HorizontalAlignment="Left" Margin="10,99,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblDate" Content="Project Start Date" HorizontalAlignment="Left" Margin="10,153,0,0" VerticalAlignment="Top"/>
         <Calendar x:Name="calendar" HorizontalAlignment="Left" Margin="10,189,0,0" VerticalAlignment="Top" SelectionMode="SingleDate"/>
-        <Button x:Name="btnConfirm" Content="Confirm Project&#xD;&#xA;Information" HorizontalAlignment="Left" Margin="234,298,0,0" VerticalAlignment="Top" Width="110" Height="59" Background="#FFDDDDDD" Click="btnConfirm_Click"/>
-        <TextBox x:Name="txtHoursPer" HorizontalAlignment="Left" Height="23" Margin="302,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" TextAlignment="Right"/>
-        <Label x:Name="lblHoursPer" Content="Hours per Story Point" HorizontalAlignment="Left" Margin="221,50,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtTotalPoints" HorizontalAlignment="Left" Height="23" Margin="302,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" TextAlignment="Right"/>
-        <Label x:Name="lblTotalPoints" Content="Total Story Points" HorizontalAlignment="Left" Margin="243,104,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtTotalCost" HorizontalAlignment="Left" Height="23" Margin="234,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" TextAlignment="Right"/>
-        <Label x:Name="lblTotalCost" Content="Total Cost Estimate" HorizontalAlignment="Left" Margin="234,158,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnConfirm" Content="Confirm Project&#xD;&#xA;Information" HorizontalAlignment="Left" Margin="206,298,0,0" VerticalAlignment="Top" Width="138" Height="59" Background="#FFDDDDDD" Click="btnConfirm_Click"/>
+        <TextBox x:Name="txtHoursPer" HorizontalAlignment="Left" Height="23" Margin="302,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" TextAlignment="Right"/>
+        <Label x:Name="lblHoursPer" Content="Hours per Story Point" HorizontalAlignment="Left" Margin="221,45,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtTotalPoints" HorizontalAlignment="Left" Height="23" Margin="302,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" TextAlignment="Right"/>
+        <Label x:Name="lblTotalPoints" Content="Total Story Points" HorizontalAlignment="Left" Margin="243,99,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtTotalCost" HorizontalAlignment="Left" Height="23" Margin="234,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" TextAlignment="Right"/>
+        <Label x:Name="lblTotalCost" Content="Total Cost Estimate" HorizontalAlignment="Left" Margin="234,153,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="10,392,0,0" VerticalAlignment="Top" Width="75" Click="btnBack_Click"/>
         <Label x:Name="title" Content="Project Information" HorizontalAlignment="Center" Margin="0,3,0,0" VerticalAlignment="Top" FontSize="24" Width="217"/>
-        <TextBlock x:Name="lblFeedback" HorizontalAlignment="Left" Margin="221,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="71" Width="133" IsEnabled="False" TextAlignment="Center"/>
+        <TextBlock x:Name="lblFeedback" HorizontalAlignment="Left" Margin="206,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="86" Width="148" IsEnabled="False" TextAlignment="Center"/>
         <Button x:Name="btnReset" Content="Reset Project&#xD;&#xA;Information" HorizontalAlignment="Left" Margin="234,392,0,0" VerticalAlignment="Top" Width="110" Background="#FFFF8F6F" Click="btnReset_Click"/>
 
     </Grid>

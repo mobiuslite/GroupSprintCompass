@@ -149,6 +149,7 @@ namespace SprintCompass
             txtTeamName.IsReadOnly = false;
             txtTotalCost.IsReadOnly = false;
             txtTotalPoints.IsReadOnly = false;
+            calendar.IsEnabled = true;
 
             btnConfirm.IsEnabled = true;
             btnReset.IsEnabled = false;
