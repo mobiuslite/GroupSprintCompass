@@ -13,5 +13,8 @@ namespace SprintCompass
     /// </summary>
     public partial class App : Application
     {
+        public static string PROJECT_INFO_FILE = "ProjectInfo.json";
+
+        public static string TEAM_MEMBERS_FILE = "TeamMembers.json";
     }
 }

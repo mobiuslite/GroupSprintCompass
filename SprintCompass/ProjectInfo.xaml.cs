@@ -81,6 +81,7 @@ namespace SprintCompass
                                 lblFeedback.Foreground = Brushes.Green;
                                 lblFeedback.Text = $"Project {projectName} created!";
                                 Project project = new Project(teamName, projectName, (DateTime)date, hoursResult, pointsResult, totalCost, new List<Sprint>());
+                                Serializer.Serialize(project, App.PROJECT_INFO_FILE);
 
                                 disableInput();
 
