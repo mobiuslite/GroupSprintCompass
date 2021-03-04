@@ -33,13 +33,13 @@ namespace SprintCompass
 
                 disableInput();
 
-                txtHoursPer.Text = project.StoryPointHours.ToString();
+                txtHoursPer.Text = project.HourPerPoint.ToString();
                 txtProjName.Text = project.ProjectName;
                 txtTeamName.Text = project.TeamName;
                 txtTotalCost.Text = project.AppCost.ToString();
                 txtTotalPoints.Text = project.EstimatedStoryPoints.ToString();
 
-                calendar.SelectedDate = project.StartDate;
+                calendar.SelectedDate = project.ProjectStartDate;
                 calendar.IsEnabled = false;
 
                 btnReset.IsEnabled = true;
