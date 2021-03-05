@@ -71,8 +71,8 @@
     <Compile Include="Sprint Information\SprintMenu.xaml.cs">
       <DependentUpon>SprintMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sprint Information\SubtaskMenu.xaml.cs">
-      <DependentUpon>SubtaskMenu.xaml</DependentUpon>
+    <Compile Include="Sprint Information\UserStoryMenu.xaml.cs">
+      <DependentUpon>UserStoryMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Team Members\TeamMemberAdd.xaml.cs">
       <DependentUpon>TeamMemberAdd.xaml</DependentUpon>
@@ -108,7 +108,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sprint Information\SubtaskMenu.xaml">
+    <Page Include="Sprint Information\UserStoryMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

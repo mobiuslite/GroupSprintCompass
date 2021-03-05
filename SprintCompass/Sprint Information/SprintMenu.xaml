@@ -11,7 +11,7 @@
     <Grid>
         <ListBox x:Name="lstSprints" HorizontalAlignment="Left" Height="430" Margin="539,10,0,0" VerticalAlignment="Top" Width="251"/>
         <Button x:Name="btnAdd" Content="Add Sprint" HorizontalAlignment="Left" Margin="432,402,0,0" VerticalAlignment="Top" Width="102" Height="38" Click="btnAdd_Click"/>
-        <Button x:Name="btnSubtasks" Content="Manage&#xD;&#xA;Subtasks" HorizontalAlignment="Left" Margin="432,344,0,0" VerticalAlignment="Top" Width="102" Height="38" Click="btnSubtasks_Click"/>
+        <Button x:Name="btnUserStories" Content="Manage&#xA;User Stories" HorizontalAlignment="Left" Margin="432,344,0,0" VerticalAlignment="Top" Width="102" Height="38" Click="btnUserStories_Click"/>
         <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="10,420,0,0" VerticalAlignment="Top" Width="75" Click="btnBack_Click"/>
     </Grid>
 </Page>
