@@ -29,6 +29,8 @@ namespace SprintCompass
             btnReset.IsEnabled = false;
             Project project = MainWindow.GetProject();
 
+            Application.Current.MainWindow.Title = "Project Information";
+
             if (project != null) {
 
                 disableInput();

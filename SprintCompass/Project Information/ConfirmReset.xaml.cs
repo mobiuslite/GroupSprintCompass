@@ -25,6 +25,7 @@ namespace SprintCompass
         {
             InitializeComponent();
             this.page = page;
+            Application.Current.MainWindow.Title = "WARNING";
         }
 
         private void confirm_Click(object sender, RoutedEventArgs e)
