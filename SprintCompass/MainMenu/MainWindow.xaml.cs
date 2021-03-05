@@ -21,12 +21,14 @@ namespace SprintCompass
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static List<TeamMember> teamMembers;
+        private static List<TeamMember> teamMembers;
+        private static List<Sprint> sprints;
         public static Project project;
 
         public MainWindow()
         {
             InitializeComponent();
+            sprints = new List<Sprint>();
             frame.Navigate(new Menu());
             ChangeWindowSize(614, 450);
             Application.Current.MainWindow.ResizeMode = ResizeMode.NoResize;
@@ -56,7 +58,28 @@ namespace SprintCompass
         public static List<TeamMember> GetTeamList()
         {
             return teamMembers;
+        }
 
+        internal static void AddSprint() {
+
+            sprints.Add(new Sprint($"Sprint {sprints.Count + 1}"));
+        
+        }
+        public static List<Sprint> GetSprintList() {
+
+            return sprints;
+        
+        }
+
+        public static List<string> GetSprintNames()
+        {
+
+            List<string> names = new List<string>();
+            foreach (Sprint s in sprints)
+            {
+                names.Add(s.Name);
+            }
+            return names;
         }
 
         public static void ChangeWindowSize(int w, int h) {
