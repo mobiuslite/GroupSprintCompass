@@ -34,9 +34,14 @@ namespace SprintCompass.Sprint_Information
             lstSprints.ItemsSource = MainWindow.GetSprintNames();
         }
 
-        private void btnSubtasks_Click(object sender, RoutedEventArgs e)
+        private void btnBack_Click(object sender, RoutedEventArgs e)
         {
+            NavigationService.Navigate(new Menu());
+            MainWindow.ChangeWindowSize(800, 450);
+        }
 
+        private void btnUserStories_Click(object sender, RoutedEventArgs e)
+        {
             if (lstSprints.SelectedItem == null)
             {
             }
@@ -46,17 +51,10 @@ namespace SprintCompass.Sprint_Information
                 List<Sprint> sprints = MainWindow.GetSprintList();
 
 
-                NavigationService.Navigate(new SubtaskMenu(sprints.Find(x => x.Name == lstSprints.SelectedItem.ToString())));
+                NavigationService.Navigate(new UserStoryMenu(sprints.Find(x => x.Name == lstSprints.SelectedItem.ToString())));
                 //Title="Subtasks" Height="466.667" Width="659.091">
-                MainWindow.ChangeWindowSize(690, 510);
+                MainWindow.ChangeWindowSize(690, 750);
             }
-        }
-
-
-        private void btnBack_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Menu());
-            MainWindow.ChangeWindowSize(800, 450);
         }
     }
 }

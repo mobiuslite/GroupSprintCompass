@@ -7,37 +7,37 @@ namespace SprintCompassLibrary
     [Serializable]
     public class Sprint
     {
-        private List<Subtask> subtasks;
+        private List<Userstory> userStories;
         public string Name { get; set; }
 
         public Sprint(string n) {
 
-            subtasks = new List<Subtask>();
+            userStories = new List<Userstory>();
             Name = n;
 
         }
 
 
-        public List<Subtask> GetSubtasks() {
+        public List<Userstory> GetUserStories() {
 
-            return subtasks;
+            return userStories;
 
         }
 
-        public List<string> GetSubtasksName() {
+        public List<string> GetUserStoryNames() {
 
             List<string> names = new List<string>();
 
-            foreach (Subtask subtask in subtasks)
+            foreach (Userstory subtask in userStories)
                 names.Add(subtask.name);
 
             return names;
 
         }
 
-        public void AddSubtasks(string name) {
+        public void AddUserStory(string name) {
 
-            subtasks.Add(new Subtask(name));
+            userStories.Add(new Userstory(name));
         
         }
 
@@ -49,6 +49,31 @@ namespace SprintCompassLibrary
         public Subtask(string n) {
             name = n;
         }
+    }
+
+    public struct Userstory
+    {
+
+        public string name;
+        public List<Subtask> subtasks;
+        public Userstory(string n)
+        {
+            name = n;
+            subtasks = new List<Subtask>();
+        }
+
+        public List<string> GetSubtaskNames() {
+
+            List<string> names = new List<string>();
+
+            foreach (Subtask subtask in subtasks) {
+
+                names.Add(subtask.name);
+
+            }
+            return names;
+        }
+
     }
 
 }
