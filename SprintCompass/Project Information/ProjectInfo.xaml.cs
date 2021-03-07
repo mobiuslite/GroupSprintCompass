@@ -52,7 +52,7 @@ namespace SprintCompass
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.GoBack();
+            NavigationService.Navigate(new Menu());
             MainWindow.ChangeWindowSize(800, 450);
         }
 

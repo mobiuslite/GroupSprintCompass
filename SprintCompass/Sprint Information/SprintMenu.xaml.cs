@@ -36,6 +36,7 @@ namespace SprintCompass.Sprint_Information
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
+            Serializer.Serialize(MainWindow.GetProject(), App.PROJECT_INFO_FILE);
             NavigationService.Navigate(new Menu());
             MainWindow.ChangeWindowSize(800, 450);
         }
