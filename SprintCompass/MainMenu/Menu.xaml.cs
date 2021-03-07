@@ -25,6 +25,9 @@ namespace SprintCompass
         {
             InitializeComponent();
             Application.Current.MainWindow.Title = "Menu";
+
+            btnSprint.IsEnabled = !MainWindow.disableSprintBtn;
+
         }
 
         private void btnTeam_Click(object sender, RoutedEventArgs e)
