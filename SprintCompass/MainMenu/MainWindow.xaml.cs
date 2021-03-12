@@ -21,8 +21,10 @@ namespace SprintCompass
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static List<TeamMember> teamMembers;
+        private static List<TeamMember> teamMembers;
         public static Project project;
+
+        public static bool disableSprintBtn;
 
         public MainWindow()
         {
@@ -33,7 +35,12 @@ namespace SprintCompass
             teamMembers = Serializer.Deserialize<List<TeamMember>>(App.TEAM_MEMBERS_FILE);
             project = Serializer.Deserialize<Project>(App.PROJECT_INFO_FILE);
 
-            if(teamMembers == null)
+            if (GetSprintList() == null && project == null)
+                disableSprintBtn = true;
+            else
+                disableSprintBtn = false;
+
+            if (teamMembers == null)
                 teamMembers = new List<TeamMember>();
 
         }
@@ -56,7 +63,36 @@ namespace SprintCompass
         public static List<TeamMember> GetTeamList()
         {
             return teamMembers;
+        }
 
+        internal static void AddSprint() {
+
+            project.AddSprint(new Sprint($"Sprint {project.Sprints.Count + 1}"));
+        
+        }
+        public static List<Sprint> GetSprintList() {
+
+            try
+            {
+                var test = project.Sprints;
+                return test;
+            }
+            catch (NullReferenceException) {
+
+                return null;
+            
+            }
+        }
+
+        public static List<string> GetSprintNames()
+        {
+
+            List<string> names = new List<string>();
+            foreach (Sprint s in project.Sprints)
+            {
+                names.Add(s.Name);
+            }
+            return names;
         }
 
         public static void ChangeWindowSize(int w, int h) {

@@ -45,7 +45,7 @@ namespace SprintCompass
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            Serializer.Serialize(MainWindow.teamMembers, App.TEAM_MEMBERS_FILE);
+            Serializer.Serialize(MainWindow.GetTeamList(), App.TEAM_MEMBERS_FILE);
 
             NavigationService.Navigate(new Menu());
             MainWindow.ChangeWindowSize(800, 450);

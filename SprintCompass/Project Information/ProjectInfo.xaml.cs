@@ -29,17 +29,19 @@ namespace SprintCompass
             btnReset.IsEnabled = false;
             Project project = MainWindow.GetProject();
 
+            Application.Current.MainWindow.Title = "Project Information";
+
             if (project != null) {
 
                 disableInput();
 
-                txtHoursPer.Text = project.StoryPointHours.ToString();
+                txtHoursPer.Text = project.HourPerPoint.ToString();
                 txtProjName.Text = project.ProjectName;
                 txtTeamName.Text = project.TeamName;
                 txtTotalCost.Text = project.AppCost.ToString();
                 txtTotalPoints.Text = project.EstimatedStoryPoints.ToString();
 
-                calendar.SelectedDate = project.StartDate;
+                calendar.SelectedDate = project.ProjectStartDate;
                 calendar.IsEnabled = false;
 
                 btnReset.IsEnabled = true;
@@ -50,7 +52,7 @@ namespace SprintCompass
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.GoBack();
+            NavigationService.Navigate(new Menu());
             MainWindow.ChangeWindowSize(800, 450);
         }
 

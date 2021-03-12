@@ -55,54 +55,68 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
+    <ApplicationDefinition Include="MainMenu\App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ConfirmReset.xaml.cs">
+    <Compile Include="Project Information\ConfirmReset.xaml.cs">
       <DependentUpon>ConfirmReset.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Menu.xaml.cs">
+    <Compile Include="MainMenu\Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ProjectInfo.xaml.cs">
+    <Compile Include="Project Information\ProjectInfo.xaml.cs">
       <DependentUpon>ProjectInfo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TeamMemberAdd.xaml.cs">
+    <Compile Include="Sprint Information\SprintMenu.xaml.cs">
+      <DependentUpon>SprintMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sprint Information\UserStoryMenu.xaml.cs">
+      <DependentUpon>UserStoryMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Team Members\TeamMemberAdd.xaml.cs">
       <DependentUpon>TeamMemberAdd.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TeamMembers.xaml.cs">
+    <Compile Include="Team Members\TeamMembers.xaml.cs">
       <DependentUpon>TeamMembers.xaml</DependentUpon>
     </Compile>
-    <Page Include="ConfirmReset.xaml">
+    <Page Include="Project Information\ConfirmReset.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="MainMenu\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="App.xaml.cs">
+    <Compile Include="MainMenu\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="MainMenu\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Menu.xaml">
+    <Page Include="MainMenu\Menu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ProjectInfo.xaml">
+    <Page Include="Project Information\ProjectInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TeamMemberAdd.xaml">
+    <Page Include="Sprint Information\SprintMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TeamMembers.xaml">
+    <Page Include="Sprint Information\UserStoryMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Team Members\TeamMemberAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Team Members\TeamMembers.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -132,7 +146,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="MainMenu\App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SprintCompassLibrary\SprintCompassLibrary.csproj">

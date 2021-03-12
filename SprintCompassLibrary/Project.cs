@@ -9,81 +9,81 @@ namespace SprintCompassLibrary
     [Serializable]
     public class Project
     {
-        private string teamname;
-        private string projectName;
-        private DateTime projectStartDate;
-        private int hourPerPoint;
-        private int estimatedStoryPoints;
-        private double appCost;
-        private List<Sprint> sprints;
+        public string TeamName { get; }
+        public string ProjectName { get; }
+        public DateTime ProjectStartDate { get; }
+        public int EstimatedStoryPoints { get; }
+        public int HourPerPoint { get; }
+        public double AppCost { get; }
+        public List<Sprint> Sprints { get; }
 
-        public string TeamName
-        {
-            get
-            {
-                return teamname;
-            }
-        }
+        //public string TeamName
+        //{
+        //    get
+        //    {
+        //        return teamname;
+        //    }
+        //}
 
-        public string ProjectName
-        {
-            get
-            {
-                return projectName;
-            }
-        }
+        //public string ProjectName
+        //{
+        //    get
+        //    {
+        //        return projectName;
+        //    }
+        //}
 
-        public DateTime StartDate
-        {
-            get
-            {
-                return projectStartDate;
-            }
-        }
+        //public DateTime StartDate
+        //{
+        //    get
+        //    {
+        //        return projectStartDate;
+        //    }
+        //}
 
-        public int StoryPointHours
-        {
-            get
-            {
-                return hourPerPoint;
-            }
-        }
+        //public int StoryPointHours
+        //{
+        //    get
+        //    {
+        //        return hourPerPoint;
+        //    }
+        //}
 
-        public int EstimatedStoryPoints
-        {
-            get
-            {
-                return estimatedStoryPoints;
-            }
-        }
+        //public int EstimatedStoryPoints
+        //{
+        //    get
+        //    {
+        //        return estimatedStoryPoints;
+        //    }
+        //}
 
-        public double AppCost
-        {
-            get
-            {
-                return appCost;
-            }
-        }
+        //public double AppCost
+        //{
+        //    get
+        //    {
+        //        return appCost;
+        //    }
+        //}
 
-        public Project(string teamname, string projectname, DateTime projectStartDate, int storypointhours, int estimatedstorypoints, double appcost, List<Sprint> sprints)
+        public Project(string teamname, string projectName, DateTime projectStartDate, int hourPerPoint, int estimatedstorypoints, double appcost, List<Sprint> sprints)
         {
-            this.teamname = teamname;
-            this.projectName = projectname;
-            this.projectStartDate = projectStartDate;
-            this.hourPerPoint = storypointhours;
-            this.estimatedStoryPoints = estimatedstorypoints;
-            this.appCost = appcost;
-            this.sprints = sprints;
+            TeamName = teamname;
+            ProjectName = projectName;
+            ProjectStartDate = projectStartDate;
+            HourPerPoint = hourPerPoint;
+            EstimatedStoryPoints = estimatedstorypoints;
+            AppCost = appcost;
+            Sprints = sprints;
         }
 
         public void AddSprint(Sprint sprint)
         {
-            sprints.Add(sprint);
+            Sprints.Add(sprint);
         }
 
         public override string ToString()
         {
-            return projectName + " by " +teamname;
+            return ProjectName + " by " +TeamName;
         }
     }
 }
