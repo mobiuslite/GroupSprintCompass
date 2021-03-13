@@ -43,17 +43,22 @@ namespace SprintCompassLibrary
 
     }
 
-    public struct Subtask{
+    public class Subtask{
 
         public string name;
+        public int hours;
         public Subtask(string n) {
             name = n;
+            hours = 0;
+        }
+        public void updateHours(int newHours)
+        {
+            hours = newHours;
         }
     }
 
     public struct Userstory
     {
-
         public string name;
         public List<Subtask> subtasks;
         public Userstory(string n)
@@ -68,12 +73,20 @@ namespace SprintCompassLibrary
 
             foreach (Subtask subtask in subtasks) {
 
-                names.Add(subtask.name);
-
+                names.Add("Subtask: " + subtask.name + " Hours: " + subtask.hours);
             }
             return names;
         }
 
+        public bool updateHours(string name, int hours)
+        {
+            Console.WriteLine(name);
+            int index = subtasks.FindIndex(x => $"Subtask: {x.name} Hours: {x.hours}" == name);
+            if (index == -1)
+                return false;
+            subtasks[index].updateHours(hours);
+            return true;
+        }
     }
 
 }

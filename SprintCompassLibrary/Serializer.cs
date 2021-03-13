@@ -34,7 +34,9 @@ namespace SprintCompassLibrary
                 if (File.Exists(filename))
                 {
                     StreamReader sr = new StreamReader(filename);
-                    return JsonConvert.DeserializeObject<T>(sr.ReadToEnd());
+                    string s = sr.ReadToEnd();
+                    var json = JsonConvert.DeserializeObject<T>(s);
+                    return json;
                 }
                 return default(T);
 

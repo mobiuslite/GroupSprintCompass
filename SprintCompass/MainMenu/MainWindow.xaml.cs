@@ -50,7 +50,8 @@ namespace SprintCompass
             teamMembers.Add(new TeamMember(name, position, contact));
         }
 
-        public static List<string> GetTeamNames() {
+        public static List<string> GetTeamNames()
+        {
 
             List<string> names = new List<string>();
             foreach (TeamMember t in teamMembers)
@@ -65,22 +66,25 @@ namespace SprintCompass
             return teamMembers;
         }
 
-        internal static void AddSprint() {
+        internal static void AddSprint()
+        {
 
             project.AddSprint(new Sprint($"Sprint {project.Sprints.Count + 1}"));
-        
+
         }
-        public static List<Sprint> GetSprintList() {
+        public static List<Sprint> GetSprintList()
+        {
 
             try
             {
                 var test = project.Sprints;
                 return test;
             }
-            catch (NullReferenceException) {
+            catch (NullReferenceException)
+            {
 
                 return null;
-            
+
             }
         }
 
@@ -88,30 +92,36 @@ namespace SprintCompass
         {
 
             List<string> names = new List<string>();
-            foreach (Sprint s in project.Sprints)
+            if (project.Sprints != null)
             {
-                names.Add(s.Name);
+                foreach (Sprint s in project.Sprints)
+                {
+                    names.Add(s.Name);
+                }
             }
             return names;
         }
 
-        public static void ChangeWindowSize(int w, int h) {
+        public static void ChangeWindowSize(int w, int h)
+        {
 
             Application.Current.MainWindow.Height = h;
             Application.Current.MainWindow.Width = w;
 
         }
 
-        public static void SetProject(Project p) {
+        public static void SetProject(Project p)
+        {
 
             project = p;
-        
+
         }
 
-        public static Project GetProject() {
+        public static Project GetProject()
+        {
 
             return project;
-        
+
         }
 
     }

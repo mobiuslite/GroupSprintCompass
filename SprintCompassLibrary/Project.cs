@@ -73,7 +73,13 @@ namespace SprintCompassLibrary
             HourPerPoint = hourPerPoint;
             EstimatedStoryPoints = estimatedstorypoints;
             AppCost = appcost;
-            Sprints = sprints;
+            if (sprints != null)
+            {
+                Sprints = sprints;
+            } else
+            {
+                Sprints = new List<Sprint>();
+            }
         }
 
         public void AddSprint(Sprint sprint)
@@ -83,7 +89,7 @@ namespace SprintCompassLibrary
 
         public override string ToString()
         {
-            return ProjectName + " by " +TeamName;
+            return ProjectName + " by " + TeamName;
         }
     }
 }

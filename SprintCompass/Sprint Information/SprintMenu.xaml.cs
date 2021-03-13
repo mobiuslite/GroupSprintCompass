@@ -45,17 +45,24 @@ namespace SprintCompass.Sprint_Information
         {
             if (lstSprints.SelectedItem == null)
             {
+                lblSprint.Content = "Please select a sprint\nbefore adding user stories";
+                lblSprint.Foreground = Brushes.Red;
             }
             else
             {
-
                 List<Sprint> sprints = MainWindow.GetSprintList();
-
 
                 NavigationService.Navigate(new UserStoryMenu(sprints.Find(x => x.Name == lstSprints.SelectedItem.ToString())));
                 //Title="Subtasks" Height="466.667" Width="659.091">
                 MainWindow.ChangeWindowSize(690, 750);
             }
+        }
+
+        private void lstSprints_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string sprintName = MainWindow.GetSprintNames().Find(x => x == lstSprints.SelectedItem.ToString());
+            lblSprint.Content = sprintName;
+            lblSprint.Foreground = Brushes.Black;
         }
     }
 }
