@@ -22,6 +22,7 @@ namespace SprintCompass.Sprint_Information
     public partial class UserStoryMenu : Page
     {
         Sprint sprint;
+        Userstory userStory;
         public UserStoryMenu(Sprint s)
         {
             InitializeComponent();
@@ -48,14 +49,15 @@ namespace SprintCompass.Sprint_Information
             lblUserStoryFeedback.Foreground = Brushes.Green;
         }
 
-        private void btnAddSubtask_Click(object sender, RoutedEventArgs e) {
+        private void btnAddSubtask_Click(object sender, RoutedEventArgs e)
+        {
 
             if (lstUserstories.SelectedItem == null)
             {
                 lblSubtaskFeedback.Content = "Please select a userstory";
                 lblSubtaskFeedback.Foreground = Brushes.Red;
             }
-            else 
+            else
             {
                 Userstory userStory = sprint.GetUserStories().Find(x => x.name == lstUserstories.SelectedItem.ToString());
                 userStory.subtasks.Add(new Subtask(txtSubtaskName.Text));
@@ -67,14 +69,42 @@ namespace SprintCompass.Sprint_Information
                 lstSubtasks.ItemsSource = userStory.GetSubtaskNames();
                 //lstSubtasks.Items.Refresh();
             }
-
-            
-
         }
 
         private void lstUserstories_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             lstSubtasks.ItemsSource = sprint.GetUserStories().Find(x => x.name == lstUserstories.SelectedItem.ToString()).GetSubtaskNames();
+        }
+
+        private void btnUpdateHours_Click(object sender, RoutedEventArgs e)
+        {
+            int hours;
+            if (lstSubtasks.SelectedItem == null)
+            {
+                lblSubtaskFeedback.Content = "Please select a subtask";
+                lblSubtaskFeedback.Foreground = Brushes.Red;
+            }
+            else
+            {
+                if (Int32.TryParse(txtUpdateHours.Text, out hours))
+                {
+
+                    Userstory userStory = sprint.GetUserStories().Find(x => x.name == lstUserstories.SelectedItem.ToString());
+
+                    bool success = userStory.updateHours(lstSubtasks.SelectedItem.ToString(), hours);
+                    txtUpdateHours.Text = "";
+                    
+                    lblSubtaskFeedback.Content = $"Updated hours to {hours}!";
+                    lblSubtaskFeedback.Foreground = Brushes.Green;
+
+                    lstSubtasks.ItemsSource = userStory.GetSubtaskNames();
+                }
+                else
+                {
+                    lblSubtaskFeedback.Content = "Value is not numeric";
+                    lblSubtaskFeedback.Foreground = Brushes.Red;
+                }
+            }
         }
     }
 }
