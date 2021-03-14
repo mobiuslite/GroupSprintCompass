@@ -43,7 +43,8 @@ namespace SprintCompassLibrary
 
     }
 
-    public struct Subtask{
+    [Serializable]
+    public class Subtask{
 
         public string name;
         public Subtask(string n) {
@@ -51,7 +52,8 @@ namespace SprintCompassLibrary
         }
     }
 
-    public struct Userstory
+    [Serializable]
+    public class Userstory
     {
 
         public string name;
@@ -72,6 +74,11 @@ namespace SprintCompassLibrary
 
             }
             return names;
+        }
+
+        public override string ToString()
+        {
+            return this.name;
         }
 
     }

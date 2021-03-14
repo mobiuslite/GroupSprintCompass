@@ -18,7 +18,7 @@
         <Label x:Name="lblSub" Content="Subtasks" HorizontalAlignment="Center" Margin="266,256,266,0" VerticalAlignment="Top" FontSize="24"/>
         <TextBox x:Name="txtSubtaskName" HorizontalAlignment="Left" Height="23" Margin="395,534,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="254"/>
         <Label x:Name="lblSubtaskName" Content="Subtask Name" HorizontalAlignment="Left" Margin="563,508,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnAddSubtask" Content="Add User Story" HorizontalAlignment="Left" Margin="550,562,0,0" VerticalAlignment="Top" Width="99" Click="btnAddSubtask_Click"/>
+        <Button x:Name="btnAddSubtask" Content="Add Subtask" HorizontalAlignment="Left" Margin="550,562,0,0" VerticalAlignment="Top" Width="99" Click="btnAddSubtask_Click"/>
         <Label x:Name="lblSubtaskFeedback" Content="" HorizontalAlignment="Left" Margin="395,590,0,0" VerticalAlignment="Top" Width="254"/>
         <Label x:Name="lblUserStoryFeedback" Content="" HorizontalAlignment="Left" Margin="10,590,0,0" VerticalAlignment="Top" Width="254"/>
 
