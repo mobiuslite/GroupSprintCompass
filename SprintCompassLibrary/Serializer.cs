@@ -13,7 +13,7 @@ namespace SprintCompassLibrary
             try
             {
                 StreamWriter sw = new StreamWriter(filename);
-                string json = JsonConvert.SerializeObject(serializable);
+                string json = JsonConvert.SerializeObject(serializable, Formatting.Indented);
                 sw.WriteLine(json);
                 sw.Close();
             }

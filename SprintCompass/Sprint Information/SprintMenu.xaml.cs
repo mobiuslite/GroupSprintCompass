@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -37,6 +38,7 @@ namespace SprintCompass.Sprint_Information
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             Serializer.Serialize(MainWindow.GetProject(), App.PROJECT_INFO_FILE);
+            Serializer.Serialize(MainWindow.GetProject().Sprints[0], "Testing Serialization of Sprint 1.json");
             NavigationService.Navigate(new Menu());
             MainWindow.ChangeWindowSize(800, 450);
         }
